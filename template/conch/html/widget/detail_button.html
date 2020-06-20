@@ -1,0 +1,14 @@
+{php}$count=1;{/php}{maccms:foreach name="obj.vod_play_list" key="play"}
+{if$maccms.aid!=15&&$count==1}						    
+<div class="playbtn o_play">
+	<a class="btn btn_primary" href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>1])}"><i class="iconfont">&#xe659;</i>&nbsp;立即播放</a>
+</div>
+{/if}
+{php}$count++;{/php}{/maccms:foreach}
+{php}$count=1;{/php}{maccms:foreach name="obj.vod_down_list"}
+{if$maccms.aid!=16&&$count==1}						    
+<div class="playbtn o_down"{if condition="$obj.vod_play_list gt 0"} style="margin-right: 0;"{/if}>
+	<a class="btn btn_primary" href="{:mac_url_vod_down($obj,['sid'=>$vo.sid,'nid'=>1])}"><i class="iconfont">&#xe63c;</i>&nbsp;下载观看</a>
+</div>
+{/if}
+{php}$count++;{/php}{/maccms:foreach}
